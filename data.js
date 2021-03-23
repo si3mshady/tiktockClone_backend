@@ -1,23 +1,37 @@
-const data = [
+const data = [[
     {
-        url:  "https://github.com/codedamn-classrooms/tiktok-react-material/raw/main/v1.mp4",
-        channel: "zenShady",
-        song: "lose yourself",
-        likes: "8888",
-        messages: "2334",
-        description: "all on the line",
-        shares: "892323"
+        "url":  "https://github.com/si3mshady/sampletikTokVids/raw/main/futureFlash.mp4",
+        "channel": "future flash",
+        "song": "flash saves the world",
+        "likes": "100,000",
+        "messages": "500,000",
+        "description": "flashpoint paradox - synder cut",
+        "shares": "892323"
 
     },
     {
-        url:  "https://github.com/codedamn-classrooms/tiktok-react-material/raw/main/v1.mp4",
-        channel: "justice league",
-        song: "flash point",
-        likes: "8888",
-        messages: "2334",
-        description: "best of the best",
-        shares: "623"
+        "url":  "https://github.com/si3mshady/sampletikTokVids/raw/main/darksiedScenes.mp4",
+        "channel": "darksied",
+        "song": "the anti-life equation",
+        "likes": "8888",
+        "messages": "111",
+        "description": "the end is near",
+        "shares": "2211232"
+
+    },
+    {
+        "url":  "https://github.com/si3mshady/sampletikTokVids/raw/main/cyborgTrailer.mp4",
+        "channel": "cyborg trailer",
+        "song": "not alone",
+        "likes": "552",
+        "messages": "242",
+        "description": "the mother box",
+        "shares": "4322332"
 
     }
-];
+
+]]
 export default data 
+
+
+//https://www.youtube.com/watch?v=Ph4Qs0ew898

@@ -13,9 +13,9 @@ const port = 9000;
 app.use(express.json())
 app.use((req,res,next) => {
     // setting the response headers for open cors access 
-    res.setHeaders('Access-Control-Allow-Origin', '*'),
-    res.setHeaders('Access-Control-Allow-Headers', '*'),
-    next()
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Headers", "*");
+    next();
 
 })
 // db config 
