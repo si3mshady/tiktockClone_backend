@@ -9,7 +9,6 @@ const port = 9000;
 
 //middle ware needed to parse json body 
 
-
 app.use(express.json())
 app.use((req,res,next) => {
     // setting the response headers for open cors access 
@@ -20,13 +19,31 @@ app.use((req,res,next) => {
 })
 // db config 
 
-const connection_url = 'mongodb+srv://si3mshady:8gQvSWC7qAsi6sCz@cluster0.vho6c.mongodb.net/tiktokclone?retryWrites=true&w=majority'
-mongoose.connect(connection_url, {
+// const connection_url = 'mongodb+srv://si3mshady:<pw>@cluster0.vho6c.mongodb.net/tiktokclone?retryWrites=true&w=majority'
+const connection = "mongodb://localhost:27017/jl";
+mongoose.connect(connection, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
 })
-//api endpoint
+
+// run initially to populate database which is mounted locally 
+// record = json object 
+
+data.forEach(record => {
+
+    Videos.create(record, (err, data) => {
+        if (!err) {          
+            console.log('Entry successful')
+            console.log(data)            
+
+        } else {
+            console.log('Entry unsuccessful')
+        }
+    })
+
+})
+
 app.get('/', (req,res) => {
     res.status(200).send('Hello world')
 })
@@ -69,8 +86,3 @@ app.post('/v2/posts', (req,res) => {
 app.listen(port, () => console.log(`Listening on port : ${port}`))
 
 
-
-
-// 8gQvSWC7qAsi6sCz
-
-// mongodb+srv://si3mshady:8gQvSWC7qAsi6sCz@cluster0.vho6c.mongodb.net/tiktokclone?retryWrites=true&w=majority
