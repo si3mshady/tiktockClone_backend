@@ -20,7 +20,8 @@ app.use((req,res,next) => {
 // db config 
 
 // const connection_url = 'mongodb+srv://si3mshady:<pw>@cluster0.vho6c.mongodb.net/tiktokclone?retryWrites=true&w=majority'
-const connection = "mongodb://localhost:27017/jl";
+const connection = "mongodb://db:27017/jl";
+// const connection = "mongodb://mongodb/jl";
 mongoose.connect(connection, {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -30,19 +31,19 @@ mongoose.connect(connection, {
 // run initially to populate database which is mounted locally 
 // record = json object 
 
-data.forEach(record => {
+// data.forEach(record => {
 
-    Videos.create(record, (err, data) => {
-        if (!err) {          
-            console.log('Entry successful')
-            console.log(data)            
+//     Videos.create(record, (err, data) => {
+//         if (!err) {          
+//             console.log('Entry successful')
+//             console.log(data)            
 
-        } else {
-            console.log('Entry unsuccessful')
-        }
-    })
+//         } else {
+//             console.log('Entry unsuccessful')
+//         }
+//     })
 
-})
+// })
 
 app.get('/', (req,res) => {
     res.status(200).send('Hello world')

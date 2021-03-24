@@ -1,0 +1,15 @@
+FROM node:latest
+
+WORKDIR /app
+
+COPY *json ./
+COPY dbModel.js ./
+COPY data.js ./
+COPY server.js ./
+
+RUN npm install 
+
+EXPOSE 9000
+
+CMD ["node", "server.js"]
+
