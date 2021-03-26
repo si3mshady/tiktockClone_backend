@@ -31,19 +31,21 @@ mongoose.connect(connection, {
 // run initially to populate database which is mounted locally 
 // record = json object 
 
-// data.forEach(record => {
 
-//     Videos.create(record, (err, data) => {
-//         if (!err) {          
-//             console.log('Entry successful')
-//             console.log(data)            
+data.forEach(record => {
 
-//         } else {
-//             console.log('Entry unsuccessful')
-//         }
-//     })
+    Videos.create(record, (err, data) => {
+        if (!err) {          
+            console.log('Entry successful')
+         
+            console.log(record)        
 
-// })
+        } else {
+            console.log('Entry unsuccessful')
+        }
+    })
+
+})
 
 app.get('/', (req,res) => {
     res.status(200).send('Hello world')
@@ -56,10 +58,16 @@ app.get('/v1/posts', (req, res) => {
 app.get('/v2/posts', (req,res) => {
     Videos.find((err,data) => {
         if (!err) {
+            console.log(typeof(data))
+            
+            console.log(data)    
+                            
             // 201 -> created 
             res.status(201).send(data)
+            
 
         } else {
+            console.log(err)
             res.status(500).send(err)
         }
 
@@ -76,6 +84,8 @@ app.post('/v2/posts', (req,res) => {
     Videos.create(dbVideos, (err, data) => {
         if (!err) {
             // 201 -> created 
+            console.log(data)
+            console.log(data.length)
             res.status(201).send(data)
 
         } else {

@@ -10,8 +10,7 @@ services:
       - "888:80"    #external:internal frontend 
     depends_on:
       - db
-  node:
-  
+  node:  
     build:
       context: .
       dockerfile: Dockerfile.dev_node
